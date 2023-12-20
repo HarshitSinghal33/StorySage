@@ -1,0 +1,148 @@
+/* Google Fonts - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --Blueish-color: rgba(0,255,255,0.9);
+    --button-color: #0171d3;
+}
+.container{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 30px;
+}
+.form{
+    position: absolute;
+    max-width: 430px;
+    width: 100%;
+    padding: 30px;
+    border-radius: 6px;
+    background: #000;
+    box-shadow: 0px 6px 15px var(--Blueish-color);
+}
+.formHeader{
+    font-size: 28px;
+    font-weight: 600;
+    text-align: center;
+}
+form{
+    margin-top: 30px;
+}
+.form .field
+{
+    position: relative;
+    height: 50px;
+    width: 100%;
+    margin-top: 20px;
+    border-radius: 6px;
+}
+.field input,
+.field button{
+    height: 100%;
+    width: 100%;
+    border: none;
+    font-size: 16px;
+    font-weight: 400;
+    border-radius: 6px;
+}
+
+.eye-icon{
+    position: absolute;
+    top: 45%;
+    right: 6px;
+    transform: translateY(-50%);
+    font-size: 33px;
+    color: #8b8b8b;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.field button{
+    color: #fff;
+    background-color: var(--button-color);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.field button:hover{
+    background-color: #03569f;
+}
+
+.form-link{
+    text-align: center;
+    margin-top: 10px;
+}
+.form-link span,
+.form-link a{
+    font-size: 14px;
+    font-weight: 400;
+}
+.form a{
+    text-decoration: none;
+}
+#forgot-pass{
+    text-decoration: underline;
+}
+.form .link{
+    margin-left: 6px;
+    color: var(--button-color);
+}
+.form-content a:hover{
+    text-decoration: underline;
+}
+.line{
+    position: relative;
+    height: 1px;
+    width: 100%;
+    margin: 36px 0;
+    background-color: #d4d4d4;
+}
+.line::before{
+    content: 'Or';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #000;
+    padding: 0 15px;
+}
+
+
+
+@media screen and (max-width: 400px) {
+    .form{
+        padding: 20px 10px;
+    }
+}
+
+/* .media-options .google{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+.google-img{
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    font-size: 21px;
+    transform: translateY(-50%);
+}
+
+.google{
+    border: 1px solid #CACACA;
+}
+.google:hover,.google:hover span{
+    border-color: var(--button-color);
+}
+.google span{
+    font-weight: 500;
+    opacity: 0.6;
+    color: white;
+}  */

@@ -1,0 +1,54 @@
+.InputContainer {
+  position: relative;
+  width: 100%;
+  transition: 0.63s all ease-in;
+  margin-bottom: 20px;
+}
+
+.InputContainer input,
+.InputContainer textarea {
+  background: #000;
+  width: 100%;
+  padding: 10px;
+  transition: 0.3s all ease-in;
+  border-radius: 6px;
+  font-size: 15px;
+  outline: none;
+  border: 1px solid rgb(132, 132, 132);
+  font-size: 16px;
+  resize: none;
+}
+
+.InputContainer label {
+  position: absolute;
+  left: 3px;
+  padding: 0px 9px;
+  top: 7.5px;
+  pointer-events: none;
+  text-transform: uppercase;
+  transition: 0.3s all ease-in;
+}
+
+.InputContainer input:focus~label,
+.InputContainer input:not(:placeholder-shown)~label,
+.InputContainer textarea:focus~label,
+.InputContainer textarea:not(:placeholder-shown)~label {
+  transition: 0.3s all ease-in;
+  transform: translateX(9px) translateY(-15px);
+  background: #000;
+  font-size: 0.75em;
+  border-right: 1px solid white;
+  border-left: 1px solid white;
+}
+
+
+.InputContainer input:focus,
+.InputContainer textarea:focus {
+  border-color: #0171d3;
+  color: white;
+}
+
+.errorMessage {
+  color: red;
+  font-size: 12px;
+}

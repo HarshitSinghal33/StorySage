@@ -1,0 +1,85 @@
+:root {
+  --font-extra-small: clamp(12px, 2vw, 14px);
+  --font-small: clamp(14px, 2vw, 18px);
+  --font-medium: clamp(18px, 2vw, 20px);
+  --font-large: clamp(24px, 6vw, 32px);
+  --font-extra-large: clamp(28px, 6vw, 40px);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+
+}
+
+body {
+  background-color: black;
+  color: white;
+}
+
+input,
+textarea {
+  color: white;
+}
+
+textarea {
+  white-space: pre-wrap;
+}
+
+a {
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.87);
+  text-decoration: inherit;
+}
+
+p,
+ol,
+ul,
+pre,
+blockquote,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+  counter-reset: list-1 list-2 list-3 list-4 list-5 list-6 list-7 list-8 list-9;
+}
+
+h1 {
+  font-size: var(--font-extra-large);
+}
+
+h2 {
+  font-size: var(--font-large);
+}
+
+
+h3,p {
+  font-size: var(--font-medium);
+}
+
+ol,
+ul {
+  font-size: var(--font-medium);
+}
+
+ol {
+  list-style-type: decimal;
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+
+/* to change auto fill bg and color of inputs */
+input:-webkit-autofill {
+  color: #ffffff;
+  -webkit-box-shadow: 0 0 0 1000px transparent inset !important;
+  transition: 5000s ease-in-out;
+}

@@ -1,0 +1,28 @@
+ .google{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #CACACA;
+    cursor: pointer;
+}
+
+.googleIcon{
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    font-size: 21px;
+    transform: translateY(-50%);
+}
+
+.google:hover,
+.google:hover span{
+    border-color: var(--button-color);
+}
+.google span{
+    font-weight: 500;
+    font-size: 18px;
+    color: #CACACA;
+}

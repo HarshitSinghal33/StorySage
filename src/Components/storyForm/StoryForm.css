@@ -1,0 +1,64 @@
+.storyFormContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.storyFormContainer .storyForm {
+    background: black;
+    width: 90%;
+    padding: 30px 50px;
+    border-radius: 12px;
+}
+
+.ql-editor {
+    min-height: 300px;
+    max-height: 75vh;
+}
+
+.radios {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 1rem;
+    margin: 18px 0;
+}
+
+.radios label {
+    text-transform: uppercase;
+    margin-right: 6px;
+}
+
+.radios [type='radio'] {
+    transform: scale(1.5);
+    margin: 0 3px;
+}
+
+.storyFormContainer .storyForm [type="submit"] {
+    margin-top: 12px;
+    width: 100%;
+    padding: 12px;
+    background: #000;
+    outline: none;
+    border: 1px solid white;
+    cursor: pointer;
+    /* font-size: var(--paragraph); */
+    border-radius: 6px;
+}
+
+.storyFormContainer .storyForm [type="submit"]:hover {
+    background: rgb(0, 106, 255);
+    border-color: rgb(0, 106, 255);
+}
+
+.errorMessage {
+    color: red;
+    font-size: 12px;
+}
+
+@media screen and (max-width: 750px) {
+    .storyFormContainer .storyForm {
+        padding: 20px 6px;
+        width: 100%;
+    }
+}

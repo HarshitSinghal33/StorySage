@@ -1,0 +1,122 @@
+.UserDataBox {
+  text-align: center;
+  margin: 36px 24px;
+  border-radius: 12px;
+  position: relative
+}
+
+
+.UserDataBox .shareButton{
+  margin-top: 4.5px;
+}
+
+/* This is for whole profile */
+.notFound {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 75vh;
+  text-align: center;
+}
+
+.UserDataBox .name {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 3px;
+}
+
+
+.SageButton {
+  z-index: 1;
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 24px;
+  gap: 1rem;
+  text-align: center;
+}
+
+.settingBtn {
+  font-size: clamp(0.87rem, 2.5vw, 1.2rem);
+  margin-top: 15px;
+  all: unset;
+  border: 1px solid white;
+  font-size: 18px;
+  width: 300px;
+  padding: 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  outline: none;
+
+}
+
+.settingBtn:hover {
+  border: 1px solid rgba(0, 255, 255, 0.7);
+  box-shadow: 0px 0.3px 6px 2px rgba(0, 255, 255, 0.7);
+}
+
+.storypathBox {
+  display: flex;
+  justify-content: space-evenly;
+  position: relative;
+  font-size: var(--font-medium);
+  font-weight: bold;
+  box-shadow:
+    inset -12px -8px 16px 0px rgba(4, 4, 4, 0.6),
+    inset 12px 8px 16px 0px rgba(47, 47, 47, 0.47);
+  margin: 0 24px;
+  border-radius: 9px;
+  user-select: none;
+}
+
+.storypathButton {
+  padding: 12px;
+  border-radius: 12px;
+  margin: 12px 0;
+  transition: 0.3s all linear;
+  text-transform: capitalize;
+}
+
+.storypathButton.Active {
+  background: rgba(0, 255, 255, 0.3);
+}
+
+/* This is for folder */
+.notFoundMessage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30vh;
+}
+
+.editProfileContainer {
+  margin: 24px 12px;
+  border-radius: 12px;
+  background: #000;
+  padding: 6px 12px 24px 12px;
+}
+
+.editProfileContainer button {
+  display: block;
+  width: 100%;
+  border-radius: 6px;
+  padding: 12px;
+  font-size: var(--font-medium);
+  cursor: pointer;
+}
+
+@media screen and (max-width: 660px) {
+  .SageButton {
+    flex-direction: column;
+  }
+
+  .settingBtn {
+    width: 100%;
+  }
+
+  .UserDataBox {
+    margin: 36px 24px;
+  }
+}
