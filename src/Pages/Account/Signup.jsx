@@ -1,24 +1,23 @@
 import React, { useEffect, useState } from 'react'
-import InputField from '../../Components/Input/InputField';
 import * as yup from 'yup';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from "@hookform/resolvers/yup"
 import { useAuth } from '../../Context/AuthContext';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
-import { auth } from '../../../Firebase';
-import { fireDb } from '../../../Firebase';
-import './form.css'
 import { Link } from 'react-router-dom';
-import { FcGoogle } from "react-icons/fc";
-// import Googlesignup from '../../Components/Googlesignup';
-import Googlesignup from '../../Components/FormComps/Googlesignup';
+import Googlesignup from '../../Components/GoogleLogSignComp/Googlesignup';
+import InputField from '../../Components/Input/InputField';
+// import { auth } from '../../../Firebase';
+// import { fireDb } from '../../../Firebase';
+
+import './form.css'
 export default function Signup() {
-  const navigate = useNavigate()
-  const [name, setName] = useState()
+  // const navigate = useNavigate()
+  // const [name, setName] = useState()
   const { signup, currentUser } = useAuth()
   const schema = yup.object().shape({
-    username: yup.string().trim().required('Please enter your name'),
+    username: yup.string().trim().required('Please enter your name').max(33, '33 is Maximum words limit'),
     email: yup.string().email('Invalid email address').trim().required("email is required"),
     password: yup.string().required('Password is required').min(6, 'Password must contain 6 Digits'),
     confirmpassword: yup.string().required('Confirm Your Password').oneOf([yup.ref('password')], 'Passwords must match'),
@@ -28,44 +27,45 @@ export default function Signup() {
     resolver: yupResolver(schema)
   })
 
-  useEffect(() => {
-    const checkEmailVerified = async () => {
-      try {
-        // Reload the current user's data
-        if (auth.currentUser) {
-          await auth.currentUser.reload();
 
-          // Check if the email is verified
-          if (auth.currentUser.emailVerified && currentUser !== null) {
-            // navigate('/userdata')
-            await fireDb.child(`/Sage/${auth.currentUser.uid}`).set({
-              name: name,
-              about: `Hey I am sage ${name}`
-            })
-            toast.success('Email verified.');
-          } else {
-            // console.log('email not found');
-            
-          }
-        }
-      } catch (error) {
-        console.log('Error while checking email verification:', error);
-      }
-    };
+  // useEffect(() => {
+  //   const checkEmailVerified = async () => {
+  //     try {
+  //       // Reload the current user's data
+  //       if (auth.currentUser) {
+  //         await auth.currentUser.reload();
 
-    // Start checking for email verification status
+  //         // Check if the email is verified
+  //         if (auth.currentUser.emailVerified && currentUser !== null) {
+  //           // navigate('/userdata')
+  //           await fireDb.child(`/Sage/${auth.currentUser.uid}`).set({
+  //             name: name,
+  //             about: `Hey I am sage ${name}`
+  //           })
+  //           toast.success('Email verified.');
+  //         } else {
+  //           // console.log('email not found');
+  //           // toast.error("Some Error Occurred in Verification")
+  //         }
+  //       }
+  //     } catch (error) {
+  //       console.log('Error while checking email verification:', error);
+  //     }
+  //   };
 
-    const checkForVerifiedInterval = setInterval(checkEmailVerified, 3000);
-    // Clean up the interval when the component unmounts
-    return () => clearInterval(checkForVerifiedInterval);
-  }, [currentUser]);
+  //   // Start checking for email verification status
 
-  const onSubmit = (data) => {
+  //   const checkForVerifiedInterval = setInterval(checkEmailVerified, 3000);
+  //   // Clean up the interval when the component unmounts
+  //   return () => clearInterval(checkForVerifiedInterval);
+  // }, [currentUser]);
+
+  const onSubmit = async (data) => {
     try {
-      setName(data.username)
-      signup(data.email, data.password)
-      // toast.success('Successfu')
+      await signup(data.username, data.email, data.password)
+      toast.success('SuccessFully LoggedIn')
     } catch (error) {
+      console.error(error);
       if (error.code === 'auth/email-already-in-use') {
         toast.error('Email is already registered.');
       } else if (error.code === 'auth/invalid-email') {
@@ -123,7 +123,7 @@ export default function Signup() {
 
         <div className="line"></div>
 
-        <Googlesignup/>
+        <Googlesignup />
       </div>
     </section>
   )

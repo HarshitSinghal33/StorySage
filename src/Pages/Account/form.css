@@ -55,7 +55,7 @@ form{
 
 .eye-icon{
     position: absolute;
-    top: 45%;
+    top: 18px;
     right: 6px;
     transform: translateY(-50%);
     font-size: 33px;
@@ -66,6 +66,8 @@ form{
 
 .field button{
     color: #fff;
+    border: none;
+    outline: none;
     background-color: var(--button-color);
     transition: all 0.3s ease;
     cursor: pointer;
@@ -112,37 +114,8 @@ form{
     background-color: #000;
     padding: 0 15px;
 }
-
-
-
 @media screen and (max-width: 400px) {
     .form{
         padding: 20px 10px;
     }
 }
-
-/* .media-options .google{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
-}
-.google-img{
-    position: absolute;
-    top: 50%;
-    left: 15px;
-    font-size: 21px;
-    transform: translateY(-50%);
-}
-
-.google{
-    border: 1px solid #CACACA;
-}
-.google:hover,.google:hover span{
-    border-color: var(--button-color);
-}
-.google span{
-    font-weight: 500;
-    opacity: 0.6;
-    color: white;
-}  */

@@ -1,11 +1,15 @@
 import React from 'react'
-import InputField from '../../Components/Input/InputField';
 import * as yup from 'yup';
+import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from "@hookform/resolvers/yup"
+import { useAuth } from '../../Context/AuthContext';
+import InputField from '../../Components/Input/InputField';
 import './form.css'
-import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
+
 export default function Changepassword() {
+  const { changepassword } = useAuth()
   const schema = yup.object().shape({
     email: yup.string().email('Invalid email address').trim().required("email is required"),
   })
@@ -14,8 +18,17 @@ export default function Changepassword() {
     resolver: yupResolver(schema)
   })
 
-  const onSubmit = (data) => {
-    console.log(data);
+  const onSubmit = async (data) => {
+    try {
+      await changepassword(data.email)
+      toast.success('Email sent successfully.')
+    } catch (error) {
+      if (error.code === 'auth/invalid-email') {
+        toast.error('Please input correct email');
+      } else {
+        toast.error('Some error occurred!. please contact to developer or try again later');
+      }
+    }
   }
 
   return (

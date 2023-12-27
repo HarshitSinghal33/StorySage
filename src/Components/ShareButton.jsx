@@ -1,9 +1,7 @@
 import React from "react";
 import { FaShareAltSquare } from "react-icons/fa";
 import { toast } from "react-toastify";
-
-// it's style is in App.css
-
+// share button component will get the story and make it shareable everywhere
 const ShareButton = ({ title, url, text }) => {
     const handleShare = async () => {
       try {
@@ -13,18 +11,17 @@ const ShareButton = ({ title, url, text }) => {
             text,
             url,
           });
-          console.log('Shared successfully');
         } else {
           toast.error('Share not supported in that browser');
         }
-      } catch (error) {
+      } catch (error) { 
+        // not toasting error because when just clikc and close it show error on mobile devices
         console.error('Error sharing:', error.message);
       }
     };
   
     return (
-      <span className="shareButton" onClick={handleShare}><h1><FaShareAltSquare/></h1></span>
+      <span className="shareButton" onClick={() => handleShare()} style={{cursor:'pointer'}}><FaShareAltSquare/></span>
     );
   };
-  
   export default ShareButton;

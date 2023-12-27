@@ -9,10 +9,10 @@
 }
 
 .backToHeader {
-    background: var(--button-color);
+    box-shadow: 0px 6px 15px rgba(1, 204, 204, 0.9);
     padding: 12px;
     display: flex;
-    /* font-size: var(--font-large); */
+    margin-bottom: 24px;
 }
 
 .backToHeader div {

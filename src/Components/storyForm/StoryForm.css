@@ -12,7 +12,7 @@
     border-radius: 12px;
 }
 
-.ql-editor {
+.storyForm .ql-editor {
     min-height: 300px;
     max-height: 75vh;
 }
@@ -42,7 +42,6 @@
     outline: none;
     border: 1px solid white;
     cursor: pointer;
-    /* font-size: var(--paragraph); */
     border-radius: 6px;
 }
 

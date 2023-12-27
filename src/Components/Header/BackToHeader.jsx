@@ -2,7 +2,8 @@ import React from 'react'
 import { FaArrowLeft } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 import styles from './Header.module.css'
-export default function BackToHeader({ path }) {
+
+export default function BackToHeader({ path }) {// this Header is for readstory and the path prop here is the page we came from
     return (
         <header className={styles.backToHeader}>
             <Link to={`/${path}`}>

@@ -3,9 +3,9 @@ import * as yup from 'yup';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from "@hookform/resolvers/yup"
 import { useAuth } from '../../Context/AuthContext';
-import { Link,useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import Googlesignup from '../../Components/FormComps/Googlesignup';
+import Googlesignup from '../../Components/GoogleLogSignComp/Googlesignup';
 import InputField from '../../Components/Input/InputField';
 import './form.css'
 
@@ -21,13 +21,13 @@ export default function Login() {
     resolver: yupResolver(schema)
   })
 
-  const onSubmit = (data) => {
+  const onSubmit = async (data) => {
     try {
-      login(data.email, data.password)
+      await login(data.email, data.password)
       toast.success('Successfully Logged In');
       navigate('/profile')
     } catch (error) {
-      toast.error(`Some error occured while logged In`)
+      toast.error(`User not found! Please Recheck your email and password.`)
     }
   }
 
@@ -68,7 +68,7 @@ export default function Login() {
         </div>
 
         <div className="line"></div>
-        <Googlesignup/>
+        <Googlesignup />
       </div>
     </section>
   )

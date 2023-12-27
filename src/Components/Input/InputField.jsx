@@ -3,11 +3,13 @@ import { IoEyeSharp } from "react-icons/io5";
 import { IoIosEyeOff } from "react-icons/io";
 import styles from './Field.module.css'
 export default function InputField({ error, register, label, handleChange, type, name, value, checked }) {
-  const [isPasswordSee, setIsPasswordSee] = useState(false)
+  const [isPasswordSee, setIsPasswordSee] = useState(false) //for chnage the icon of eye  
 
   // is type is password or text that we got from prop name 'type'
   const [isEyeType, setIsEyeType] = useState(type)
 
+
+  // for handle the change of type of input fields
   const handleEyeChange = (passwordSee) => {
     setIsPasswordSee(passwordSee);
     setIsEyeType(() => {

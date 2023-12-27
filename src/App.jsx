@@ -33,13 +33,12 @@ function App() {
           <Routes>
             <Route path='/' element={<Home />} />
             <Route element={<PrivateRoute />}>
-              <Route path='/CreateStory' element={<CreateStory />} />
               <Route path='/updateStory/:storyFolder/:storyId' element={<UpdateStory />} />
-              <Route path='/profile/:sageID?' element={<Profile />} />
               <Route path='/editProfile' element={<Editprofile />} />
             </Route>
-            <Route path='/Readstory/:storyFolder/:storyID/:lastPath?' element={<Readstory />} />
-            
+            <Route path='/profile/:sageID?' element={<Profile />} />
+            <Route path='/CreateStory' element={<CreateStory />} />
+            <Route path='/Readstory/:sageID?/:storyFolder/:storyID/:lastPath?' element={<Readstory />} />
             <Route path='/Changepassword' element={<Changepassword />} />
             <Route path='/Signup' element={<Signup />} />
             <Route path='/Login' element={<Login />} />
@@ -49,5 +48,4 @@ function App() {
     </BrowserRouter>
   )
 }
-
 export default App
