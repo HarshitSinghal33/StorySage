@@ -17,7 +17,7 @@ Experience StorySages live! Click on the link below: [StorySage Live Demo](https
   - [Installation](#installation)
 - [Usage](#usage)
 - [Firebase Configuration](#firebase-configuration)
-  - [Firebase setup and Story working](#firebase-setup-and-stories-feed-working)
+  - [Firebase setup and Story working](#firebase-setup-and-stories-feed-Implementation)
   - [Firebase Rules](#Firebase-Rules)
 - [Deployment](#deployment)
 - [Built With](#built-with)
